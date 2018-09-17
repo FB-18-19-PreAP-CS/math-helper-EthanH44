@@ -18,20 +18,26 @@ def Pythag(a,b):
     return c
 
 def Arithmetic_last(a1,n,d):
-    ''' Gives the nth term in a sequence '''
+    ''' Gives the nth term in a sequence that is
+        arithmetic(addition) '''
     an = a1 + ((n-1)*d)
+    return an
+
+def Geo_last(a1,n,r):
+    ''' Gives the nth term in a sequence that is
+        geometric(multiplication) '''
+    an = a1*(r**(n-1))
     return an
 
 
     
     
-    
-    
-    
-
-
-
 def add(x,y):
     a = x+y
     print(a)
 
+def main():
+    return
+
+if __name__ == "__main__":
+    main()
