@@ -8,7 +8,12 @@ def slope(x1,y1,x2,y2):
         
         >>> slope(0,0,1,1)
         1.0
-    
+        >>> slope(3,4,5,2)
+        -1.0
+        >>> slope(6,2,6,5)
+        False, 0 for denominator is undefined
+        >>> slope(5,8,3,0) 
+        4.0
         
     
     ''' 
@@ -57,6 +62,8 @@ def geo_last(a1,n,r):
     '''
     an = a1*(r**(n-1))
     return an
+
+ 
 
 
     
