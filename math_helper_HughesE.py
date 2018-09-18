@@ -21,29 +21,46 @@ def slope(x1,y1,x2,y2):
 
 def pythag(a,b):
     ''' With given two sides of a triangle you will be
-        able to find the length of the third side '''
+        able to find the length of the third side
+        
+        >>> pythag(7,24)
+        25.0
+        
+        
+    '''
     c = (a**2)+(b**2)
     c = sqrt(c)
     return c
 
-def arithmetic_last(a1,n,d):
+def arith_last(a1,n,d):
     ''' Gives the nth term in a sequence that is
-        arithmetic(addition) '''
+        arithmetic(addition)
+        
+        >>> arith_last(2,15,3)
+        44
+        
+        
+        
+        
+    '''
     an = a1 + ((n-1)*d)
     return an
 
 def geo_last(a1,n,r):
     ''' Gives the nth term in a sequence that is
-        geometric(multiplication) '''
+        geometric(multiplication)
+    
+        >>> geo_last(4,5,3)
+        324
+    
+    
+    '''
     an = a1*(r**(n-1))
     return an
 
 
     
-    
-def add(x,y):
-    a = x+y
-    print(a)
+
 
 def main():
     return
