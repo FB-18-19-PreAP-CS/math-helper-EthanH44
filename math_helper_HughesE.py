@@ -13,7 +13,7 @@ def slope(x1,y1,x2,y2):
         >>> slope(6,2,6,5)
         Traceback (most recent call last):
             ...
-        ValueError: Denominator cannot equal 0; undefined'
+        ValueError: Denominator cannot equal 0; undefined
         >>> slope(5,8,3,0) 
         '4.0'
         >>> slope(-2,3,10,-8)
@@ -23,7 +23,7 @@ def slope(x1,y1,x2,y2):
     y = y1-y2
     x = x1-x2
     if x == 0:
-        raise ValueError("Denominator cannot equal 0")
+        raise ValueError("Denominator cannot equal 0; undefined")
     slope = y/x
     return f'{slope:.1f}'
 
@@ -71,8 +71,8 @@ def geo_last(a1,n,r):
     
         >>> geo_last(4,5,3)
         324
-        >>> geo_last(
-    
+        >>> geo_last(6,6,3.5)
+        3151.3125
     
     '''
     an = a1*(r**(n-1))
