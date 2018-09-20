@@ -45,6 +45,7 @@ def pythag(a,b):
     '''
     c = (a**2)+(b**2)
     c = sqrt(c)
+    
     return f'{c:.1f}'
 
 def arith_last(a1,n,d):
@@ -73,7 +74,12 @@ def geo_last(a1,n,r):
         324
         >>> geo_last(6,6,3.5)
         3151.3125
-    
+        >>> geo_last(-3,4,6)
+        -648
+        >>> geo_last(3,-3,8)
+        0.000732421875
+        >>> geo_last(-4,3,-6)
+        -144
     '''
     an = a1*(r**(n-1))
     return an
@@ -85,9 +91,25 @@ def geo_last(a1,n,r):
 
 
 def main():
-    return
-
+    print("Hello welcome to Ethan's Math Helper")
+    print("In this math helper you can use the following functions:")
+    while True:
+        print("a. Slope")
+        print("b. Pythagorean Theorem")
+        print("c. Arithmetic Last Sequence")
+        print("d. Geometric Last Sequence")
+        print("e. Quit")
+        func = input("Which function would you like to use: ")
+        if func == "a":
+            x1 = input("What is the x value of your first coordinate: ")
+            y1 = input("What is the y value of your first coordinate: ")
+            x2 = input("What is the x value of your second coordinate: ")
+            y2 = input("What is the y value o fyour second coordinate: ")
+            slope(x1,y1,x2,y2)
+        if func == "e":
+            break
+    print("Thank you for using Ethan's Math Helper")
 if __name__ == "__main__":
-    #main()
-    import doctest
-    doctest.testmod()
+    main()
+    #import doctest
+    #doctest.testmod()
