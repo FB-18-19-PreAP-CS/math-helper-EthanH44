@@ -11,7 +11,7 @@ def slope(x1,y1,x2,y2):
         >>> slope(3,4,5,2)
         -1.0
         >>> slope(6,2,6,5)
-        False, 0 for denominator is undefined
+        'Undefined'
         >>> slope(5,8,3,0) 
         4.0
         
@@ -20,7 +20,7 @@ def slope(x1,y1,x2,y2):
     y = y1-y2
     x = x1-x2
     if x == 0:
-        return "False, 0 for denominator is undefined"
+        return "Undefined"
     slope = y/x
     return slope
 
@@ -31,6 +31,8 @@ def pythag(a,b):
         >>> pythag(7,24)
         25.0
         
+        >>> pythag(-3,4)
+        Error?
         
     '''
     c = (a**2)+(b**2)
@@ -44,7 +46,8 @@ def arith_last(a1,n,d):
         >>> arith_last(2,15,3)
         44
         
-        
+        >>> arith_last(1,-10,12)
+        Error?
         
         
     '''
@@ -58,6 +61,8 @@ def geo_last(a1,n,r):
         >>> geo_last(4,5,3)
         324
     
+        >>> geo_last(2,-8,3)
+        Error?
     
     '''
     an = a1*(r**(n-1))
