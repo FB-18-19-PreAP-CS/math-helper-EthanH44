@@ -84,6 +84,11 @@ def geo_last(a1,n,r):
     an = a1*(r**(n-1))
     return an
 
+def heron(a,b,c):
+    s = (a+b+c)/2
+    area = sqrt((s)*(s-a)*(s-b)*(s-c))
+    return area
+
  
 
 
@@ -98,16 +103,37 @@ def main():
         print("b. Pythagorean Theorem")
         print("c. Arithmetic Last Sequence")
         print("d. Geometric Last Sequence")
-        print("e. Quit")
+        print("e. Heron's Formula")
         func = input("Which function would you like to use: ")
         if func == "a":
-            x1 = input("What is the x value of your first coordinate: ")
-            y1 = input("What is the y value of your first coordinate: ")
-            x2 = input("What is the x value of your second coordinate: ")
-            y2 = input("What is the y value o fyour second coordinate: ")
-            slope(x1,y1,x2,y2)
+            x1 = float(input("What is the x value of your first coordinate: "))
+            y1 = float(input("What is the y value of your first coordinate: "))
+            x2 = float(input("What is the x value of your second coordinate: "))
+            y2 = float(input("What is the y value of your second coordinate: "))
+            print('The slope is {}'.format(slope(x1,y1,x2,y2)))
+        if func == "b":
+            s1 = float(input("What is the value of the first side: "))
+            s2 = float(input("What is the falue of the second side: "))
+            print('The third side is equal to {}'.format(pythag(s1,s2)))
+        if func == "c":
+            a1 = float(input("What is the first term in the sequence: "))
+            n = float(input("What term are you looking for: "))
+            d = float(input("What is the common difference of the sequence: "))
+            print('The term you are looking for is {}'.format(arith_last(a1,n,d)))
+        if func == "d":
+            a1 = float(input("What is the first term in the sequence: "))
+            n = float(input("What is the term you are looking for: "))
+            r = float(input("What is the common rate of the sequence: "))
+            print("The term you are looking for is {}".format(geo_last(a1,n,r)))
         if func == "e":
+            a = float(input("What is the length of the first side of the triangle: "))
+            b = float(input("What is the length of the second side of the triangle: "))
+            c = float(input("What is the length of the second side of the trangle: "))
+            print("The area of the triangle is {}".format(heron(a,b,c)))
+        yn = input("Would you like to use Ethan's Math Helper again? y/n: ")
+        if yn == 'n':
             break
+        
     print("Thank you for using Ethan's Math Helper")
 if __name__ == "__main__":
     main()
