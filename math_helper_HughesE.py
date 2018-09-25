@@ -19,7 +19,9 @@ def slope(x1,y1,x2,y2):
         >>> slope(-2,3,10,-8)
         '-0.9'
     
-    ''' 
+    '''
+    if x1 == x2 and y1 == y2:
+        raise ValueError("Cannot find slope of identical points; no slope")
     y = y1-y2
     x = x1-x2
     if x == 0:
@@ -85,6 +87,15 @@ def geo_last(a1,n,r):
     return an
 
 def heron(a,b,c):
+    '''Gives the area of triangle when gives three side lengths
+
+        >>> heron(1,4,8)
+
+
+
+
+    '''
+    
     s = (a+b+c)/2
     area = sqrt((s)*(s-a)*(s-b)*(s-c))
     return area
@@ -99,36 +110,36 @@ def main():
     print("Hello welcome to Ethan's Math Helper")
     print("In this math helper you can use the following functions:")
     while True:
-        print("a. Slope")
-        print("b. Pythagorean Theorem")
-        print("c. Arithmetic Last Sequence")
-        print("d. Geometric Last Sequence")
-        print("e. Heron's Formula")
+        print("A. Slope")
+        print("B. Pythagorean Theorem (Solving for Hypotneuse)")
+        print("C. Arithmetic Last Sequence")
+        print("D. Geometric Last Sequence")
+        print("E. Heron's Formula")
         func = input("Which function would you like to use: ")
-        if func == "a":
+        if func == "a" or "A":
             x1 = float(input("What is the x value of your first coordinate: "))
             y1 = float(input("What is the y value of your first coordinate: "))
             x2 = float(input("What is the x value of your second coordinate: "))
             y2 = float(input("What is the y value of your second coordinate: "))
             print('The slope is {}'.format(slope(x1,y1,x2,y2)))
-        if func == "b":
+        if func == "b" or "B":
             s1 = float(input("What is the value of the first side: "))
             s2 = float(input("What is the falue of the second side: "))
             print('The third side is equal to {}'.format(pythag(s1,s2)))
-        if func == "c":
+        if func == "c" or "C":
             a1 = float(input("What is the first term in the sequence: "))
             n = float(input("What term are you looking for: "))
             d = float(input("What is the common difference of the sequence: "))
             print('The term you are looking for is {}'.format(arith_last(a1,n,d)))
-        if func == "d":
+        if func == "d" or "D":
             a1 = float(input("What is the first term in the sequence: "))
             n = float(input("What is the term you are looking for: "))
             r = float(input("What is the common rate of the sequence: "))
             print("The term you are looking for is {}".format(geo_last(a1,n,r)))
-        if func == "e":
+        if func == "e" or "E":
             a = float(input("What is the length of the first side of the triangle: "))
             b = float(input("What is the length of the second side of the triangle: "))
-            c = float(input("What is the length of the second side of the trangle: "))
+            c = float(input("What is the length of the third side of the trangle: "))
             print("The area of the triangle is {}".format(heron(a,b,c)))
         yn = input("Would you like to use Ethan's Math Helper again? y/n: ")
         if yn == 'n':
